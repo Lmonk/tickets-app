@@ -1,0 +1,14 @@
+{
+  "cheapest": "найдешевший",
+  "fastest": "найшвидший",  
+  "optimal": "оптимальний",
+  "transfer": {
+    "title": "кількість пересадок",
+    "all": "Всі",
+    "zero_transfer": "Без пересадок",
+    "transfer": "{{count}} пересадка",
+    "transfers": "{{count}} пересадки"
+  },
+  "show_more_tickets": "показати ще {{amount}} квитків",
+  "duration": "в дорозі"
+}

@@ -1,0 +1,244 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700'
+
+$xs-viewport: 767px
+$sm-viewport: 991px
+$md-viewport: 1199px
+$lg-viewport: 1440px
+
+$base-bg-color: #fff
+$dark-black-color: #4A4A4A
+$light-black-color: #A0B0B9
+$base-blue-color: #2196F3
+
+$font-family-base: "Open Sans"
+$font-weight-normal: 400
+$font-weight-bold: 600
+
+$padding-base: 20px
+$border-radius-base: 5px
+$button-height: 50px
+$font-size-base: 12px
+$title-height: 45px
+
+%base-box-shadow
+  -webkit-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.1)
+  -moz-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.1)
+  box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.1)
+
+%user-select-none
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+*
+  box-sizing: border-box
+
+body
+  display: flex
+  justify-content: center
+  font-family: $font-family-base
+  margin: 40px
+
+#root
+  max-width: 1440px
+  width: 100%
+  padding: 50px
+  background-color: #f3f7fa
+
+header
+  display: flex
+  justify-content: center
+
+  .logo:hover
+    filter: drop-shadow(0 0 5px #61dafbaa)
+
+.page
+  display: grid
+  grid-template-columns: 1fr 2fr
+  gap: 20px
+  grid-auto-rows: minmax(100px, auto)
+  padding-top: 20px
+
+  .right-column
+    display: grid
+    grid-template-columns: 1fr
+    gap: 20px
+
+    .tickets-list
+      display: grid
+      grid-template-columns: 1fr
+      gap: 20px
+
+      .show-more
+        background: $base-blue-color
+        border-radius: $border-radius-base      
+        cursor: pointer
+        height: $button-height
+        color: #fff
+        border: none
+        font-size: $font-size-base
+        font-weight: $font-weight-bold
+        text-transform: uppercase
+
+      .ticket-card
+        padding: 20px
+        background: $base-bg-color
+        border-radius: $border-radius-base
+        @extend %base-box-shadow
+
+        .ticket-header
+          display: flex
+          flex-direction: row
+          justify-content: space-between
+          align-items: center
+          margin-bottom: 10px
+
+        .logo 
+          max-width: 200px
+          max-height: 50px
+
+        .price
+          color: $base-blue-color
+          font-size: 24px
+          font-weight: $font-weight-bold
+
+        .route-data
+          display: grid
+          grid-template-columns: 1fr 1fr 1fr
+          margin-top: 10px
+
+          &:first-child
+            margin-top: 0
+
+          .route div,
+          .duration div,
+          .transfers div
+            font-size: 14px
+            color: $dark-black-color
+            font-weight: $font-weight-bold
+
+            &:first-child
+              font-size: $font-size-base
+              color: $light-black-color
+              font-weight: $font-weight-bold
+              text-transform: uppercase
+
+.filter-selector
+  display: flex
+  flex-direction: column
+  background: $base-bg-color
+  border-radius: $border-radius-base
+  padding-bottom: 10px
+  @extend %base-box-shadow
+
+  .title    
+    padding: 5px 20px
+    display: flex
+    align-items: center
+    font-weight: $font-weight-bold
+    height: $title-height
+    font-size: 13px
+    text-transform: uppercase
+  
+  .filter-option 
+    display: block
+    font-size: 13px
+    font-weight: $font-weight-normal
+
+    label
+      display: flex
+      cursor: pointer
+      align-items: center
+      justify-items: start
+      padding: 10px 20px
+      @extend %user-select-none
+
+      &.checked .checkmark:after
+        left: 4px
+        top: 4px
+        width: 10px
+        height: 5px
+        border: solid $base-blue-color
+        border-width: 0 3px 3px 0
+        -webkit-transform: rotate(-45deg) scale(-1, 1)
+        -ms-transform: rotate(-45deg) scale(-1, 1)
+        transform: rotate(-45deg) scale(-1, 1)
+
+      &:hover
+        background: #F1FCFF
+
+      .checkmark
+        height: 20px
+        width: 20px
+        position: relative
+        background-color: transparent
+        border-radius: 2px
+        border: 1px solid $base-blue-color
+
+        &:after
+          content: ""
+          position: absolute
+          display: block
+        
+
+      .name
+        display: block
+        padding-left: 10px
+
+      input
+        position: absolute
+        opacity: 0
+        height: 0
+        width: 0
+      
+
+.sort-selector
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
+  grid-auto-rows: minmax(auto, auto)
+  font-size: $font-size-base
+  font-weight: $font-weight-bold
+
+  *
+    display: flex
+    align-items: center
+    text-transform: uppercase
+    justify-content: center
+    border: 1px solid #DFE5EC
+    background: $base-bg-color
+    cursor: pointer
+    height: 50px
+    @extend %user-select-none
+
+    &:hover
+      -webkit-box-shadow: inset 0px 0px 12px 0px rgba(33,150,243,1)
+      -moz-box-shadow: inset 0px 0px 12px 0px rgba(33,150,243,1)
+      box-shadow: inset 0px 0px 12px 0px rgba(33,150,243,1)
+
+    &:first-child
+      border-radius: $border-radius-base 0 0 $border-radius-base
+
+    &:last-child
+      border-radius: 0 $border-radius-base $border-radius-base 0
+
+    &.selected
+      background: $base-blue-color
+      border-color: $base-blue-color
+      color: #fff
+
+@media (max-width: $xs-viewport)
+  body 
+    margin: 0
+
+  .page
+    grid-template-columns: 1fr
+    padding-top: 0
+
+    .filter-selector .filter-option label
+      padding: 5px 20px
+
+@media (max-width: $sm-viewport)
+  #root
+    padding: 25px
+  

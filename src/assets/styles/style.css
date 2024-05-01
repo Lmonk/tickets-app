@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..8001,75..100,300..800&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  font-family: "Open Sans";
+}
+
+#root {
+  max-width: 960px;
+  width: 100%;
+  padding: 50px;
+  background-color: #f3f7fa;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+header .logo:hover {
+  filter: drop-shadow(0 0 5px rgba(97, 218, 251, 0.6666666667));
+}
+
+.page {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.transfer-selector-block {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 5px;
+  padding: 5px 15px;
+}
+.transfer-selector-block .title {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  height: 45px;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.filters-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: minmax(auto, auto);
+  font-size: 12px;
+  font-weight: 600;
+}
+.filters-selector * {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  justify-content: center;
+  border: 1px solid #DFE5EC;
+  background: #fff;
+  cursor: pointer;
+  height: 50px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+}
+.filters-selector *:hover {
+  box-shadow: inset 0px 0px 12px 0px rgb(33, 150, 243);
+}
+.filters-selector *:first-child {
+  border-radius: 5px 0 0 5px;
+}
+.filters-selector *:last-child {
+  border-radius: 0 5px 5px 0;
+}
+.filters-selector *.selected {
+  color: #fff;
+  background: #2196f3;
+}/*# sourceMappingURL=style.css.map */
