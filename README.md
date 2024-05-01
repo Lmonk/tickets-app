@@ -1,11 +1,2 @@
-# react-from-scratch
-Youtube - React Development Environment Setup From Scratch With TypeScript, Webpack, and Babel
-
-## Installation
-
-`git clone https://github.com/full-stackcoder/react-from-scratch.git`
-`npm install`
-
-
-
-"# tickets-app" 
+# tickets-app
+Ticket app built with React, Redux, TypeScript, Sass, Webpack, and Babel
